@@ -1,10 +1,13 @@
 <ul class="row">
-  <div class="col-md-3 col-sm-6">
+  <div *ngFor="let gift of gifs" class="col-md-3 col-sm-6">
     <div class="card mb-2 bg-dark text-center">
-        <!-- TODO: CARD IMG -->
-        <img src="..." class="card-img-top" alt="...">
+      <img
+        [src]="gift.images.downsized_medium.url"
+        class="card-img-top"
+        [alt]="gift.title"
+      />
       <div class="card-body text-white">
-        <p class="card-text">Hola mundo</p>
+        <p class="card-text">{{ gift.title }}</p>
       </div>
     </div>
   </div>
